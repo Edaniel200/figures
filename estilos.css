@@ -1,0 +1,73 @@
+
+      *{
+        padding: 0px; margin: 0px;
+      }
+
+      section > div{
+        display: flex;
+        align-items: center;
+
+
+
+        padding: 20px;
+        box-sizing: border-box;
+
+        flex-wrap: wrap;
+
+      }
+      section > div > div{
+        flex: 1;
+      }
+      
+      #chart_div{
+
+        padding: 0px;
+        margin: 0px;
+      
+
+      }
+      #acciones > div{
+        padding: 10px 0px;
+      }
+
+      #acciones > #acciones_cambio > button{
+
+        padding: 5px;
+        background-color: #599;
+        color: white;
+        border: solid 1px #599;
+
+      }
+
+      #acciones > #acciones_agregar > button{
+
+        padding: 5px;
+        background-color: #257;
+        color: white;
+        border: solid 1px #257;
+
+      }
+      #acciones > #acciones_agregar > input{
+
+        padding: 5px;
+        background-color: #eee;
+        border: solid 1px #aaa;
+        margin-top: 5px;
+
+      }
+
+      #acciones > #acciones_agregado_externo > button{
+
+        padding: 5px;
+        background-color: #25a;
+        color: white;
+        border: solid 1px #25a;
+
+      }
+      #acciones > #acciones_agregado_externo > input{
+
+        padding: 5px;
+        border: solid 1px #aaa;
+        margin-top: 5px;
+
+      }

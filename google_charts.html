@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>google charts</title>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+	<script type="text/javascript">
+		//cargamos en la variable api
+		var googleVar = google.charts;
+//cargar el paquete de graficos.
+      googleVar.load('current'/*version de la API de graficos*/,{'packages'/*paquete de graficos*/:['corechart'/*todas las graficas basicas de google*/]});
+//este metodo llama a la funcion que se ejecurtara para crear el grafico
+      googleVar.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+//creamos un objeto y mediante el metodo addColumn creamos columnas de tipo. 
+//tipo de dato , nombre
+        var data = new google.visualization.DataTable();
+        var data2 =  google.visualization.arrayToDataTable([
+        		['Nombre', 'horas trabajadas'],
+        		['Daniel', 20],
+        		['Erwing', 50],
+        		['jose', 55],
+        	],false);
+        data.addColumn('string', 'Nombre');
+        data.addColumn('number', 'Trozos');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        var width = 400 ,height = 300;
+
+        var grafico = new google.visualization.PieChart(document.getElementById('chart_div'));
+
+        var grafico2 = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+        grafico.draw(data, {'title':'Datos de pizza', width,height});
+
+        grafico2.draw(data2,{'title':'Datos de trabajo',width,height});
+
+
+      }
+    </script>
+
+</head>
+<body>
+
+	<div id="chart_div"></div>
+	<div id="chart_div2"></div>
+  
+</body>
+</html>

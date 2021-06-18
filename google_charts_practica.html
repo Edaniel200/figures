@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript" src="funcionalidad.js"></script>
+
+  </head>
+  <body>
+     <p id="error" style="background-color: #faa; color: white;padding: 5px; font-weight: bold; text-align: center; text-transform: uppercase;">---</p>
+
+
+    <section>
+
+      <div>
+          
+        <div id="chart_div"></div>
+
+        <div id="acciones">
+
+          <div id="acciones_cambio">
+
+            <button onclick="cambio('-');">Pie Chart</button>
+            <button onclick="cambio('A');">Area Chart</button>
+
+          </div>
+
+          <div id="acciones_agregar">
+
+            <button onclick="verificar();">Agregar Registro</button>
+            <input type="text" id="nombre" placeholder="nombre">
+            <input type="number" id="edad" placeholder="edad">
+
+          </div>
+
+          <div id="acciones_agregado_externo">
+
+            <button onclick="verificarURL();">Insertar datos desde archivo externo</button>
+            <input type="text" id="url" placeholder="url del archivo">
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+
+    <script type="text/javascript">
+    	
+      let	nombre = document.getElementById("nombre");
+    	let edad = document.getElementById("edad");
+    	let error = document.getElementById("error");
+
+
+    	function verificar(){
+
+    		if(nombre.value == "" || edad.value == ""){
+    			error.innerHTML = "Porfavor Insertar los datos";
+    		}
+    		else{
+
+    			error.style.backgroundColor = "green";
+
+    			error.innerHTML = "Bien Hecho";
+
+    			AGGFilas([[nombre.value, parseInt(edad.value)]]);
+
+    		}
+    	}
+
+    	function reiniciar(){
+
+	      	  error.style.backgroundColor = "red";
+	      	  error.innerHTML = "inserte los datos";
+	      	  nombre.value = "";
+	      	  edad.value = "";
+    	}
+
+    </script>
+
+  </body>
+</html>
